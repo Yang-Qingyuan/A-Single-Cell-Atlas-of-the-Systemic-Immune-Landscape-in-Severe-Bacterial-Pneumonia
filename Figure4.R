@@ -19,7 +19,7 @@ sce.all=readRDS(paste0(filep,'4.publicHC_PBMC-sce.all_qc_cluster-join-celltype.r
 colm=c(#Mono        
   '#e68b81','#f7df87','#8ccbea', '#cceac4')
 library(monocle)
-mycds=readRDS("pseudotime/mycds-mono_VariableFeatures.rds")
+mycds=readRDS("pseudotime/mycds-mono.rds")
 
 ctcol=colm
 df=pData(mycds) 
@@ -66,9 +66,9 @@ p4.2=ggplot(data = cell_types) +
   guides(fill=guide_legend(title= ""))+
   theme_classic()+
   theme(
-    strip.background = element_blank(), # 去掉分面标题的方框
-    strip.text = element_text(size = 10, face = "bold"), # 设置分面标题的字体大小为10且加粗
-    axis.text.x = element_text(angle = 90, vjust = 0.5, hjust = 1) # 将X轴的文字垂直显示
+    strip.background = element_blank(), 
+    strip.text = element_text(size = 10, face = "bold"), 
+    axis.text.x = element_text(angle = 90, vjust = 0.5, hjust = 1) 
   ) +
   th
 p4.2
